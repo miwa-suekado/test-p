@@ -1,0 +1,265 @@
+@import'css';
+
+// .pagetop{
+//   width: 60px;
+//   line-height: 60px;
+//   display: block;
+//   box-shadow: 0 3px 6px rgba(0,0,0,16);
+//   background-color: $cMain;
+//   border-radius: 50%;
+//   position: absolute;
+//   right: 20px;
+//   bottom: 200px;
+//   color: $cWhite;
+//   font-size: 28px;
+//   text-align: center;%
+// }
+
+.pagetop{
+  width: 50px;
+  height: 50px;
+  display: block;
+  box-shadow: 0 3px 6px rgba($cMain,.5);
+  background-color: $cMain;
+  border-radius: 50%;
+  position: absolute;
+  right: 40px;
+  bottom: 210px;
+  color: $cWhite;
+  font-size: 28px;
+  text-align: center;
+  line-height: 50px;
+  transition: .5s;
+  &:hover{
+    box-shadow: 0 6px 6px rgba(0, 0, 0, .5);
+    opacity: 80%;
+  }
+}
+
+
+header{
+  padding: 15px 0;
+  text-align: center;
+  .header{
+    &_title{
+      font-size: 34px;
+      text-align: center;
+      font-weight: 900;
+      color: $cBlack;
+      text-decoration: none;
+      transition: .4s;
+      font-family: 'Merriweather', serif;
+    }
+    &_item{
+      display: inline-block;
+      margin: 10px;
+      & a{
+        font-weight: 900;
+        color: $cBlack;
+        text-decoration: none;
+        transition: .4s;
+        &:hover{
+        color: $cMain;
+        }
+      }
+    }
+      &_text{
+        margin-top: 2px;
+        font-size: 12px;
+        color: $cText;
+    }
+  }
+}
+
+.article_detail {
+  &_area {
+    width: 768px;
+    margin: 0 auto;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+  &_eyecatch {
+    margin-bottom: 20px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &_body {
+    @media (max-width: 768px) {
+      width: calc(100% - 30px);
+      margin: 0 auto;
+    }
+  }
+  &_image {
+    margin-bottom: 40px;
+    width: 100%;
+    height: auto;
+  }
+  &_category,
+  &_date {
+    font-size: 14px;
+    display: inline;
+  }
+  &_category {
+    margin-left: 5px;
+  }
+  &_title {
+    margin-bottom: 15px;
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 700;
+  }
+  &_text {
+    margin-bottom: 40px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 28px;
+    color: $cText;
+    strong {
+      font-weight: 700;
+      background-image: linear-gradient(to top,rgba($cMain,.5) 40%,transparent 40%);
+    }
+  }
+}
+
+.article{
+  &_area{
+    margin-top: 40px;
+  }
+  &_inner{
+    width: 768px;
+    margin: auto;
+    display: flex;//横に並ぶのを防ぐため
+    flex-flow: wrap;
+    @media (max-width: 768px) {
+      width: calc(100% - 30px);
+    }
+  }
+  &_card{
+    margin-bottom: 40px;
+    width: calc(50% - 10px);
+    color: $cText;
+    text-decoration: none;
+    box-sizing: border-box;//パディングとボーダーを幅と高さに含める
+    transition: .5s;
+    &:nth-child(2n){
+      margin-left: 20px;
+    }
+    &:hover{
+      box-shadow: 0 0 20px $cBlack;
+      img{
+        transform: scale(1.2);//hoverした時に画像が大きくなる＋でトランジションの記述も必要
+        // transition: .5s;
+      }
+    }
+    @media (max-width: 768px){
+      width: 100%;
+      box-shadow: 0 0 20px #ddd;
+      &:nth-child(2n){
+        margin-left: 0;
+      }
+    }
+    &_img{
+      margin-bottom: 15px;
+      position: relative;
+      overflow: hidden;//要素のボックスからはみ出てしまった部分は隠れ
+      img{
+        width: 100%;
+        height: 230px;
+        transition: .5s;
+      }
+    }
+    &_body{
+      padding: 0 20px 40px;
+
+    }
+    &_date,
+    &_category{
+      display: inline;
+      font-size: 12px;
+    }
+    &_category{
+      margin-left: 5px;
+    }
+    &_title{
+      margin: 5px 0;
+      font-size: 20px;
+      line-height: 24px;//行間を調節
+    }
+  }
+}
+
+button{
+  text-align: center;
+  background-color: red;
+}
+
+footer{
+  text-align: center;
+  .footer{
+    &_content{
+      padding: 30px 0 40px;
+      background-color: $cBlack;
+    }
+    &_title{
+      font-size: 34px;
+      text-align: center;
+      font-weight: 900;
+      color: $cWhite;
+      transition: .4s;
+      font-family: 'Merriweather', serif;
+      // a{
+      //   text-decoration: none;
+      //   color: $cWhite;
+      //   transition: .5s;
+      //   &:hover{
+      //     color: $cMain;
+      //   }
+      // }
+    }
+    &_sns{
+      &_title{
+        color: $cWhite;
+        font-size: 12px;
+      }
+      &_list{
+        display: block;
+        margin-top: 15px ;
+      }
+      &_item{
+        display: inline-block;
+        &:not(:first-child){
+          margin-left: 5px; 
+        }
+        a{
+          color: $cWhite ;
+          font-size: 28px;
+          display: inline-block;
+          width: 60px;
+          line-height: 60px;
+          border-radius: 50%;
+          transition: .3s;
+          &:hover{
+            opacity: 50%;
+          }
+          &.twitter{
+            background-color: $color_twitter;
+          }
+          &.facebook{
+            background-color: $color_facebook;
+          }
+          &.rss{
+            background-color: $color_rss;
+          }
+        }
+      }
+    }
+    &_text{
+      color: $cWhite;
+      margin-top: 20px;
+      font-size: 12px;
+    }
+  }
+}
